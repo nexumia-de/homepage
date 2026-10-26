@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nexumia – free apps for game nights and Linux phones</title>
+  <meta name="description" content="Nexumia makes free apps: couch games that turn a TV and a few phones into a game table, and native apps for Linux phones running Phosh.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#17141C" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FAF6F0" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://nexumia.de/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a href="/" class="logo" aria-label="Nexumia home">
+        <picture>
+          <source srcset="assets/nexumia-lockup-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="assets/nexumia-lockup-light.svg" alt="Nexumia" width="136" height="32">
+        </picture>
+      </a>
+      <nav aria-label="Main">
+        <a href="#games">Games</a>
+        <a href="#phone-apps">Phone apps</a>
+        <a href="#support">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap">
+      <h1>Free apps for game nights and Linux&nbsp;phones.</h1>
+      <p class="lead">
+        Nexumia is a small, independent project. It makes party games that
+        turn a TV and a few phones into a game table, and native apps for
+        phones that run Linux. No accounts, no ads, no tracking.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://games.nexumia.de/">Play the games</a>
+        <a class="button" href="#phone-apps">See the phone apps</a>
+      </div>
+    </section>
+
+    <section id="games" class="section" aria-labelledby="games-title">
+      <div class="wrap split">
+        <div class="split-text">
+          <p class="kicker">games.nexumia.de</p>
+          <h2 id="games-title">Couch games in your browser</h2>
+          <p>
+            Put the game on the TV or a laptop, pick up your phones and play.
+            The phones become controllers, score sheets and secret hands, and
+            they connect to the big screen peer to peer, without a game
+            server in between.
+          </p>
+          <ul class="facts">
+            <li>Runs in any modern browser; install it as an app if you like.</li>
+            <li>Works offline once loaded. Nothing to sign up for.</li>
+            <li>15 games, in English and German.</li>
+          </ul>
+          <a class="button primary" href="https://games.nexumia.de/">Open the games</a>
+        </div>
+
+        <ul class="areas" aria-label="Kinds of games">
+          <li class="card area">
+            <img src="assets/area-dice.svg" alt="" width="48" height="48">
+            <div>
+              <h3>Dice and score sheets</h3>
+              <p>Classic dice games, dice bingo and a dart score keeper.</p>
+            </div>
+          </li>
+          <li class="card area">
+            <img src="assets/area-party.svg" alt="" width="48" height="48">
+            <div>
+              <h3>Party and deduction</h3>
+              <p>Werewolf, Imposter, drawing and guessing, and writing stories together.</p>
+            </div>
+          </li>
+          <li class="card area">
+            <img src="assets/area-music.svg" alt="" width="48" height="48">
+            <div>
+              <h3>Music</h3>
+              <p>A karaoke duel that scores your pitch, and sheet-music practice.</p>
+            </div>
+          </li>
+          <li class="card area">
+            <img src="assets/area-cards.svg" alt="" width="48" height="48">
+            <div>
+              <h3>Cards and table</h3>
+              <p>A game table for card, board and dice games with hidden hands.</p>
+            </div>
+          </li>
+          <li class="card area">
+            <img src="assets/area-puzzle.svg" alt="" width="48" height="48">
+            <div>
+              <h3>Puzzles</h3>
+              <p>A daily word puzzle and Sudoku, alone or as a duel.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="phone-apps" class="section" aria-labelledby="apps-title">
+      <div class="wrap">
+        <p class="kicker">flatpak.nexumia.de</p>
+        <h2 id="apps-title">Apps for Linux phones</h2>
+        <p class="intro">
+          Native GTK and libadwaita apps for phones running
+          <a href="https://phosh.mobi/">Phosh</a>, such as the PinePhone or
+          the Librem&nbsp;5. They adapt to a desktop window just as well, and
+          they install and update through GNOME Software.
+        </p>
+
+        <article class="card app">
+          <img class="app-icon" src="assets/cirro.svg" alt="" width="96" height="96">
+          <div class="app-body">
+            <h3>Cirro</h3>
+            <p class="app-summary">Rain radar with a 2-hour forecast</p>
+            <p>
+              Cirro shows the rain radar for Germany on a map and animates it
+              from the past hour to two hours ahead, so you can see when the
+              shower reaches you. It uses the radar nowcast that the Deutscher
+              Wetterdienst publishes as open data.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="https://flatpak.nexumia.de/">Install</a>
+              <a class="button" href="https://github.com/nexumia-de/cirro">Source code</a>
+            </div>
+            <p class="note">
+              Cirro is not affiliated with the Deutscher Wetterdienst. Map
+              data © OpenStreetMap contributors.
+            </p>
+          </div>
+        </article>
+
+        <p class="more">
+          More apps are on the way. All of them will appear in the same
+          repository: add it once and GNOME Software keeps every app up to
+          date.
+        </p>
+        <pre class="code" aria-label="Add the repository in a terminal"><code>flatpak remote-add --user --if-not-exists nexumia https://flatpak.nexumia.de/nexumia.flatpakrepo</code></pre>
+      </div>
+    </section>
+
+    <section id="support" class="section" aria-labelledby="support-title">
+      <div class="wrap">
+        <h2 id="support-title">Free for everyone</h2>
+        <p>
+          Every Nexumia app is free to use, without ads and without selling
+          your data. If you want to help pay for development and for more
+          free apps, you can support the project on Liberapay.
+        </p>
+        <a class="button primary" href="https://liberapay.com/suitably">Support on Liberapay</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p>© 2026 suitably</p>
+      <nav aria-label="Footer">
+        <a href="https://games.nexumia.de/">Games</a>
+        <a href="https://flatpak.nexumia.de/">Phone apps</a>
+        <a href="https://github.com/nexumia-de">GitHub</a>
+        <a href="https://liberapay.com/suitably">Liberapay</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
