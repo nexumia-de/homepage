@@ -38,6 +38,6 @@ so on [Liberapay](https://liberapay.com/suitably).
 
 ## Licence
 
-Code and text: MIT. Fonts: SIL Open Font License 1.1. See `REUSE.toml`
-and `LICENSES/`. The licence does not grant the right to use the name
+Code and text: GNU Affero General Public License v3.0 or later. Fonts:
+SIL Open Font License 1.1. See `REUSE.toml` and `LICENSES/`. The licence does not grant the right to use the name
 Nexumia or its logo for other projects.
