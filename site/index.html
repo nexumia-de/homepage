@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nexumia – free apps for game nights and Linux phones</title>
-  <meta name="description" content="Nexumia makes free apps: couch games that turn a TV and a few phones into a game table, and native apps for Linux phones running Phosh.">
+  <meta name="description" content="Nexumia makes free apps: couch games that turn a TV and a few phones into a game table, and native apps for Linux phones running Phosh: rain radar, day planner, Jellyfin and Navidrome players, Matrix chat and watch health data.">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#17141C" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#FAF6F0" media="(prefers-color-scheme: light)">
@@ -39,7 +39,8 @@
       <p class="lead">
         Nexumia is a small, independent project. It makes party games that
         turn a TV and a few phones into a game table, and native apps for
-        phones that run Linux. No accounts, no ads, no tracking.
+        phones that run Linux: rain radar, day planner, video, music, chat
+        and your watch’s health data. No accounts, no ads, no tracking.
       </p>
       <div class="actions">
         <a class="button primary" href="https://games.nexumia.de/">Play the games</a>
@@ -117,34 +118,109 @@
           they install and update through GNOME Software.
         </p>
 
-        <article class="card app">
-          <img class="app-icon" src="assets/cirro.svg" alt="" width="96" height="96">
-          <div class="app-body">
-            <h3>Cirro</h3>
-            <p class="app-summary">Rain radar with a 2-hour forecast</p>
-            <p>
-              Cirro shows the rain radar for Germany on a map and animates it
-              from the past hour to two hours ahead, so you can see when the
-              shower reaches you. It uses the radar nowcast that the Deutscher
-              Wetterdienst publishes as open data.
-            </p>
-            <div class="actions">
-              <a class="button primary" href="https://flatpak.nexumia.de/">Install</a>
-              <a class="button" href="https://github.com/nexumia-de/cirro">Source code</a>
+        <ul class="apps" aria-label="Apps">
+          <li class="card app">
+            <img class="app-icon" src="assets/cirro.svg" alt="" width="64" height="64">
+            <div class="app-body">
+              <h3>Cirro</h3>
+              <p class="app-summary">Rain radar with a 2-hour forecast</p>
+              <p>The rain radar for Germany on a map, animated from the past hour to two hours ahead, from the radar nowcast that the Deutscher Wetterdienst publishes as open data.</p>
+              <ul class="facts">
+              <li>“Rain starts in 35&nbsp;min” and a bar chart for your location.</li>
+              <li>Save places as pins and see each one’s forecast with a tap.</li>
+              <li>Search for a town, use your location or pick a spot on the map.</li>
+              </ul>
+              <a class="text-link" href="https://github.com/nexumia-de/cirro">Source code<span class="visually-hidden"> of Cirro</span></a>
+              <p class="note">Not affiliated with the Deutscher Wetterdienst. Map data © OpenStreetMap contributors.</p>
             </div>
-            <p class="note">
-              Cirro is not affiliated with the Deutscher Wetterdienst. Map
-              data © OpenStreetMap contributors.
-            </p>
-          </div>
-        </article>
+          </li>
+          <li class="card app">
+            <img class="app-icon" src="assets/day-planner.svg" alt="" width="64" height="64">
+            <div class="app-body">
+              <h3>Day Planner</h3>
+              <p class="app-summary">Plan your day and track the time you spend on tasks</p>
+              <p>A light task list with a timer per task. It keeps your tasks in Super Productivity’s backup format, so a backup moves between both apps without changes.</p>
+              <ul class="facts">
+              <li>Today’s list, projects, tags and subtasks.</li>
+              <li>Repeating tasks, the same way as in Super Productivity.</li>
+              <li>Habit journeys from <a href="https://github.com/nexumia-de/questarc">QuestArc</a>: small steps that grow, calm or with a game layer.</li>
+              <li>Works offline, with no account.</li>
+              </ul>
+              <a class="text-link" href="https://github.com/nexumia-de/pensum">Source code<span class="visually-hidden"> of Day Planner</span></a>
+              <p class="note">Not affiliated with the Super Productivity project.</p>
+            </div>
+          </li>
+          <li class="card app">
+            <img class="app-icon" src="assets/ephyra.svg" alt="" width="64" height="64">
+            <div class="app-body">
+              <h3>Ephyra</h3>
+              <p class="app-summary">Watch your Jellyfin library</p>
+              <p>Plays the movies, shows and music of your own Jellyfin server, with continue watching, next episodes and resume where you stopped.</p>
+              <ul class="facts">
+              <li>Audio tracks and subtitles, skip intro and credits, next episode.</li>
+              <li>Double tap to skip, rotate to landscape.</li>
+              <li>The server converts videos the phone can’t play.</li>
+              </ul>
+              <a class="text-link" href="https://github.com/nexumia-de/ephyra">Source code<span class="visually-hidden"> of Ephyra</span></a>
+              <p class="note">Not affiliated with the Jellyfin project.</p>
+            </div>
+          </li>
+          <li class="card app">
+            <img class="app-icon" src="assets/nauta.svg" alt="" width="64" height="64">
+            <div class="app-body">
+              <h3>Nauta</h3>
+              <p class="app-summary">Listen to your Navidrome library</p>
+              <p>Plays the music of your own Navidrome or other OpenSubsonic server, and keeps playing with the screen off, with controls on the lock screen.</p>
+              <ul class="facts">
+              <li>Playlists, liked songs, a queue with shuffle, repeat and a sleep timer.</li>
+              <li>Synced lyrics, artist radio and similar artists.</li>
+              <li>Find new songs and download them through your own MeTube server.</li>
+              </ul>
+              <a class="text-link" href="https://github.com/nexumia-de/nauta">Source code<span class="visually-hidden"> of Nauta</span></a>
+              <p class="note">Not affiliated with the Navidrome project.</p>
+            </div>
+          </li>
+          <li class="card app">
+            <img class="app-icon" src="assets/nuntius.svg" alt="" width="64" height="64">
+            <div class="app-body">
+              <h3>Nuntius</h3>
+              <p class="app-summary">Chat on Matrix</p>
+              <p>A Matrix chat app based on Fractal that gets push notifications through UnifiedPush, such as ntfy, while the app is closed.</p>
+              <ul class="facts">
+              <li>Encrypted chats and rooms, as in Fractal.</li>
+              <li>No Google services needed for notifications.</li>
+              </ul>
+              <a class="text-link" href="https://github.com/nexumia-de/nuntius">Source code<span class="visually-hidden"> of Nuntius</span></a>
+              <p class="note">A fork of Fractal, not affiliated with the Fractal project.</p>
+            </div>
+          </li>
+          <li class="card app">
+            <img class="app-icon" src="assets/pulsus.svg" alt="" width="64" height="64">
+            <div class="app-body">
+              <h3>Pulsus</h3>
+              <p class="app-summary">See the health data of your watch</p>
+              <p>Shows the data that Amazfish downloads from your smartwatch. It only reads Amazfish’s database and needs no account and no network.</p>
+              <ul class="facts">
+              <li>Steps, resting heart rate, sleep, stress, HRV, blood oxygen and more.</li>
+              <li>Every value by day, week, month and year, against your own normal range.</li>
+              <li>Workouts with the heart rate during them.</li>
+              </ul>
+              <a class="text-link" href="https://github.com/nexumia-de/pulsus">Source code<span class="visually-hidden"> of Pulsus</span></a>
+              <p class="note">Not affiliated with Amazfish or the watch maker. Not a medical device.</p>
+            </div>
+          </li>
+        </ul>
 
-        <p class="more">
-          More apps are on the way. All of them will appear in the same
-          repository: add it once and GNOME Software keeps every app up to
-          date.
-        </p>
+        <div class="install">
+          <h3>Install</h3>
+          <p>
+            All apps are in one Flatpak repository: add it once and GNOME
+            Software installs them and keeps every app up to date.
+          </p>
+          <a class="button primary" href="https://flatpak.nexumia.de/">Open the app repository</a>
+          <p>Or add it in a terminal:</p>
         <pre class="code" aria-label="Add the repository in a terminal"><code>flatpak remote-add --user --if-not-exists nexumia https://flatpak.nexumia.de/nexumia.flatpakrepo</code></pre>
+        </div>
       </div>
     </section>
 
