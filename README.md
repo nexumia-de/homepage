@@ -58,11 +58,6 @@ Hosted like games.nexumia.de (LocalGameGalaxy): GitHub Actions runs
 Without a domain the Worker is also reachable at
 `https://nexumia-homepage.<your-subdomain>.workers.dev`.
 
-## Support
-
-The apps are free. If you want to support their development, you can do
-so on [Liberapay](https://liberapay.com/suitably).
-
 ## Licence
 
 Code and text: GNU Affero General Public License v3.0 or later. Fonts:
