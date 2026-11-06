@@ -269,26 +269,49 @@ a:focus-visible, .button:focus-visible {
 
 /* Phone apps */
 
-.app {
+.apps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
   gap: 16px;
-  padding: 24px;
-  max-width: 820px;
 }
 
-.app-icon { width: 80px; height: 80px; }
-.app h3 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; }
+.app {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 20px;
+}
+
+.app-icon { width: 56px; height: 56px; }
+.app h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; }
 .app-summary { color: var(--text-secondary); font-weight: 600; margin-bottom: 12px; }
-.app .actions { margin-top: 8px; }
-.app .actions .button { margin-top: 16px; }
-.note { margin-top: 16px; font-size: 0.875rem; color: var(--text-secondary); }
+.app .facts { margin-bottom: 12px; font-size: 0.95rem; }
+.text-link { display: inline-block; padding-block: 10px; font-weight: 600; }
+.note { margin-top: 12px; font-size: 0.875rem; color: var(--text-secondary); }
 
 @media (min-width: 600px) {
-  .app { grid-template-columns: auto 1fr; gap: 24px; padding: 32px; }
-  .app-icon { width: 96px; height: 96px; }
+  .app { grid-template-columns: auto 1fr; gap: 20px; padding: 24px; }
+  .app-icon { width: 64px; height: 64px; }
 }
 
-.more { max-width: 68ch; margin-top: 32px; }
+@media (min-width: 900px) {
+  .apps { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+
+.install { max-width: 820px; margin-top: 48px; }
+.install h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+.install .button { margin-block: 16px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 
 .code {
   max-width: 820px;

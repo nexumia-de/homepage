@@ -8,7 +8,9 @@ Plain HTML and CSS, no build step, no JavaScript, no external requests:
 the fonts (Figtree, Bricolage Grotesque) are served from `site/assets/fonts/`.
 Colours, type and the couch mark follow the Nexumia visual system in
 LocalGameGalaxy's `DESIGN.md`; the logo and game-area icons are copied
-from its `design/brand/`, the Cirro icon from the cirro repository.
+from its `design/brand/`. The app icons are copied from each app's
+repository (`data/icons/`); Nuntius still uses Fractal's icon, so the
+page shows its own neutral chat icon (`site/assets/nuntius.svg`).
 
 ## Layout
 
