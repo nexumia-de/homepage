@@ -12,6 +12,6 @@
   "devDependencies": {
     "html-validate": "11.21.1",
     "linkinator": "8.1.0",
-    "wrangler": "4.151.3"
+    "wrangler": "4.165.0"
   }
 }
