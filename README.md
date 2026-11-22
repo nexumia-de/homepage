@@ -4,6 +4,10 @@ The homepage at <https://nexumia.de/>: one static page that points to
 the Nexumia couch games at <https://games.nexumia.de/> and to the apps
 for Linux phones at <https://flatpak.nexumia.de/>.
 
+The legal notice and the privacy notice are `site/imprint.html` and
+`site/privacy.html`; the privacy notice must stay true to what the site
+does.
+
 Plain HTML and CSS, no build step, no JavaScript, no external requests:
 the fonts (Figtree, Bricolage Grotesque) are served from `site/assets/fonts/`.
 Colours, type and the couch mark follow the Nexumia visual system in
@@ -14,7 +18,7 @@ page shows its own neutral chat icon (`site/assets/nuntius.svg`).
 
 ## Layout
 
-- `site/`: everything that is published (`index.html`, `404.html`, `style.css`, `assets/`).
+- `site/`: everything that is published (`index.html`, `imprint.html`, `privacy.html`, `404.html`, `style.css`, `assets/`).
 - `wrangler.jsonc`: Cloudflare Worker `nexumia-homepage`, static assets only, custom domains `nexumia.de` and `www.nexumia.de`.
 - `.github/workflows/deploy.yml`: job `check`, then the deploy on every push to `main`; pull requests get a preview URL.
 - `tools/`: pinned tools for the checks and the deploy (`package.json`); not published.
