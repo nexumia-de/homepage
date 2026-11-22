@@ -43,3 +43,15 @@ texts checked if in doubt.
   (phosh-apps): add a footer link to `https://nexumia.de/imprint` and a
   privacy text of their own that describes their hosting and what they
   process. Not done here because it is outside this repository.
+
+# Name and logo (#3)
+
+Why: [decision](decisions/trademark.md).
+
+- [ ] Search once for older marks named "Nexumia" (free): DPMAregister
+  (<https://register.dpma.de/>) and TMview (<https://www.tmdn.org/tmview/>),
+  classes 9, 41 and 42. If there is a hit for similar goods, reopen the
+  decision before the name spreads further.
+- [ ] If you want the registration anyway: file the word mark online at
+  the DPMA (DPMAdirektWeb). That needs your name, address and the fee,
+  so only you can do it.
