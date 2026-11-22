@@ -1,5 +1,7 @@
-# Deploys site/ to Cloudflare Workers: main → nexumia.de, pull requests → preview.
-name: Deploy
+# Checks site/ and deploys it to Cloudflare Workers: main → nexumia.de,
+# pull requests → preview. Nothing is deployed unless `check` passes.
+# What the checks cover: docs/checks.md.
+name: Check and deploy
 
 on:
   push:
@@ -15,8 +17,46 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # The job id is the required status check in .github/rulesets/main.json:
+  # rename both together.
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Licence of every file (REUSE)
+        uses: fsfe/reuse-action@676e2d560c9a403aa252096d99fcab3e1132b0f5 # v6.0.0
+
+      - name: Install the pinned tools
+        working-directory: tools
+        run: npm ci --no-audit --no-fund
+
+      - name: Valid HTML
+        working-directory: tools
+        run: npm run html
+
+      - name: Internal links, assets and anchors
+        working-directory: tools
+        run: npm run links
+
+      - name: Worker configuration
+        working-directory: tools
+        env:
+          WRANGLER_SEND_METRICS: 'false'
+        run: npm run config
+
+      - name: Placeholders left for the owner
+        run: |
+          if grep -rn 'data-owner-todo' site; then
+            echo "::warning::site/ still contains placeholders for the owner, see docs/owner-checks.md"
+          fi
+
   deploy:
     name: Deploy to Cloudflare
+    needs: check
     # Fork and Dependabot pull requests have no access to secrets.
     if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-24.04
@@ -26,13 +66,18 @@ jobs:
         with:
           persist-credentials: false
 
+      # One pin for local runs, the check and the deploy; Dependabot updates it.
+      - name: Read the pinned wrangler version
+        id: wrangler
+        run: echo "version=$(jq -er '.devDependencies.wrangler' tools/package.json)" >> "$GITHUB_OUTPUT"
+
       - name: Deploy
         id: cloudflare
         uses: cloudflare/wrangler-action@953926a2e2182532811c01a25e53647d93bf07c0 # v4.1.3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: '4.151.3'
+          wranglerVersion: ${{ steps.wrangler.outputs.version }}
           command: ${{ github.ref == 'refs/heads/main' && 'deploy' || 'preview' }}
 
       - name: Show URL
