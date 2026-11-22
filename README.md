@@ -16,18 +16,34 @@ page shows its own neutral chat icon (`site/assets/nuntius.svg`).
 
 - `site/`: everything that is published (`index.html`, `404.html`, `style.css`, `assets/`).
 - `wrangler.jsonc`: Cloudflare Worker `nexumia-homepage`, static assets only, custom domains `nexumia.de` and `www.nexumia.de`.
-- `.github/workflows/deploy.yml`: deploys on every push to `main`; pull requests get a preview URL.
+- `.github/workflows/deploy.yml`: job `check`, then the deploy on every push to `main`; pull requests get a preview URL.
+- `tools/`: pinned tools for the checks and the deploy (`package.json`); not published.
+- `docs/`: knowledge bundle, entry `docs/index.md`; what only the owner can do is in `docs/owner-checks.md`.
+- `AGENTS.md`: rules for coding agents; it imports the shared rules from a phosh-toolkit checkout next to this repository.
 
 ## Preview locally
 
 ```sh
 python3 -m http.server -d site 8000
-# or, exactly as Cloudflare serves it:
-npx wrangler@4.151.3 dev
+# or, exactly as Cloudflare serves it (after `npm --prefix tools ci`):
+npm --prefix tools exec -- wrangler dev
 ```
 
 Check the page at 360 px width and at a desktop size, in light and dark
 mode.
+
+## Checks
+
+CI runs the job `check` before every deploy: licences (REUSE), valid
+HTML, internal links and assets, and the Worker configuration. Locally:
+
+```sh
+reuse lint
+npm --prefix tools ci
+npm --prefix tools run check
+```
+
+Details: `docs/checks.md`.
 
 ## Publish on Cloudflare Workers
 
@@ -48,7 +64,7 @@ Hosted like games.nexumia.de (LocalGameGalaxy): GitHub Actions runs
    DNS record yet. Cloudflare dashboard → `nexumia.de` → DNS → Records:
    delete any `A`, `AAAA` or `CNAME` record for `nexumia.de` (`@`) and
    `www`. Leave `games`, `flatpak` and mail records (`MX`, `TXT`) alone.
-5. **Deploy.** Push to `main` (or Actions → *Deploy* → *Run workflow*).
+5. **Deploy.** Push to `main` (or Actions → *Check and deploy* → *Run workflow*).
    Wrangler creates the Worker, the DNS records and the certificates for
    `nexumia.de` and `www.nexumia.de` itself.
 6. **Check.** Workers & Pages → `nexumia-homepage` → Settings → Domains

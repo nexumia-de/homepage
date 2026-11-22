@@ -1,0 +1,19 @@
+# Weekly pull requests for new versions of the GitHub Actions used here
+# and of the pinned tools in tools/ (html-validate, linkinator, wrangler).
+# See docs/checks.md.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ['*']
+  - package-ecosystem: npm
+    directory: /tools
+    schedule:
+      interval: weekly
+    groups:
+      tools:
+        patterns: ['*']

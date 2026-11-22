@@ -1,0 +1,17 @@
+{
+  "name": "nexumia-homepage-tools",
+  "description": "Pinned tools that check and deploy site/. Nothing here is published.",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "html": "html-validate --config htmlvalidate.json \"../site/**/*.html\"",
+    "links": "linkinator index.html 404.html --server-root ../site --recurse --check-fragments --skip \"^https?://(?!localhost|127\\.|\\[)\" --verbosity error",
+    "config": "wrangler deploy --dry-run --config ../wrangler.jsonc",
+    "check": "npm run html && npm run links"
+  },
+  "devDependencies": {
+    "html-validate": "11.21.1",
+    "linkinator": "8.1.0",
+    "wrangler": "4.151.3"
+  }
+}
